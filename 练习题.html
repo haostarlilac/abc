@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+	<body>
+		<script>
+			//查找数组
+			// var add = [1,2,3,4,5,6,7];
+			// aem(add,3);
+			// function aem(arr,item){
+			// 	for(var i=0;i<arr.length;i++){
+			// 		if(arr[i]==item){
+			// 			return i;
+			// 			console.log(i);
+			// 		}
+			// 	}
+			// 	return -1;
+			// }
+			
+			//输入值保存为数组
+			// var arr = new Array();
+			// var name = prompt('请输入数字', '');
+			// while(name != null && name != '' && arr.length<10){
+			// 	arr.push(name);
+			// 	name = prompt('请输入数字', '');
+			// }
+			// arr.sort(function compare(p1,p2){
+			// 	return p1-p2;
+			// });
+			// for(var i = arr.length-1;i>=0;i--){
+			// 	document.write(arr[i]+' ')
+			// }
+
+			//数组求和
+			var a = [1,2,3,4,5,6,7];
+			sum(a);
+			
+			function sum(arr){
+				var all = 0;
+				for(var i=arr.length-1;i>=0;i--){
+					all+=arr[i];
+				}
+				return all ;
+			}
+
+
+			//数组移除相等元素
+			var a = [1, 2, 33,2,3,5,2, 4, 5, 6, 7];
+			remove(a,2);
+			function remove(arr,item){
+				var b = [];
+				for(var i = 0;i<a.length;i++){
+					if(a[i] !=item){
+						b.push(a[i]);//存进数组
+					}
+				}
+				return(b) ;
+			};
+
+
+			//数组添加新值
+			var a = [1, 2, 3, 4, 5, 6, 7];
+			append(a,10);
+			function append(arr, item) {
+				arr.push(item);
+				console.log(arr) ;
+				}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<form name="x">
+		<input type="text" name="a" />
+		<input type="button" value="Search" name="btn" onclick="search(this.form.a.value)" />
+	</form>
+	<p id="pid"></p>
+	
+	<script>
+		var s = {
+			"rows": [{
+				"name": "张三",
+				"idn": "20114100000",
+			}, {
+				"name": "李四",
+				"idn": "201556123000",
+			}, {
+				"name": "王五",
+				"idn": "2012101221000",
+			}, {
+				"name": "赵六",
+				"idn": "201191221000",
+			}]
+		};
+
+		function search(k) {
+			if (k == "") return;
+
+			var arr = [];
+			var patt = new RegExp(k);
+			for (var i = 0; i < s.rows.length; i++) {
+				if (patt.test(s.rows[i].name) || patt.test(s.rows[i].idn)) {
+					arr.push(i);
+				}
+			}
+
+			if (arr.length) {
+				var str = "";
+				for (var i = 0; i < arr.length; i++) {
+					str += "车牌: " + s.rows[arr[i]].name + ", 会员权限:" + s.rows[arr[i]].idn + "\n";
+				}
+					//插入表格
+				document.getElementById('pid').innerHTML = str;
+			} else {
+				alert("no find.");
+			}
+		}
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title></title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link href="css/style.css" rel="stylesheet">
+	</head>
+	<body>
+	<script>
+			var a = {n:1}; 
+			var b = a;  
+			a.x = a = {n:2}; 
+			console.log(a.x);// --> undefined 
+			console.log(b.x);// --> [object Object] 
+</script>
+	</body>
+</html>
